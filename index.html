@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CourseHub — Curated YouTube Academy</title>
+    <meta name="description" content="Browse curated YouTube courses by topic, level, and creator." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .facet-icon {
+        transition: transform 0.2s ease;
+      }
+      .facet-icon.is-open {
+        transform: rotate(180deg);
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#545f73",
+              "primary-fixed-dim": "#bcc7de",
+              "on-tertiary-fixed-variant": "#930100",
+              "on-background": "#1b1c1a",
+              "tertiary-fixed-dim": "#ffb4a8",
+              "on-primary-fixed-variant": "#3c475a",
+              "primary-container": "#1e293b",
+              outline: "#75777d",
+              tertiary: "#330000",
+              surface: "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae8e5",
+              "on-primary-fixed": "#111c2d",
+              "outline-variant": "#c5c6cd",
+              "inverse-surface": "#30312f",
+              "primary-fixed": "#d8e3fb",
+              primary: "#091426",
+              "on-secondary-fixed": "#002114",
+              "on-error": "#ffffff",
+              "surface-bright": "#fbf9f6",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#ff523e",
+              "surface-dim": "#dbdad7",
+              "secondary-fixed": "#b1f0ce",
+              error: "#ba1a1a",
+              secondary: "#2c694e",
+              background: "#fbf9f6",
+              "tertiary-container": "#5a0000",
+              "on-secondary-fixed-variant": "#0e5138",
+              "inverse-primary": "#bcc7de",
+              "secondary-fixed-dim": "#95d4b3",
+              "inverse-on-surface": "#f2f0ed",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-surface": "#1b1c1a",
+              "on-secondary-container": "#316e52",
+              "on-surface-variant": "#45474c",
+              "surface-container": "#efeeeb",
+              "secondary-container": "#aeeecb",
+              "surface-container-highest": "#e4e2df",
+              "on-tertiary-fixed": "#410000",
+              "on-primary-container": "#8590a6",
+              "tertiary-fixed": "#ffdad4",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-sm": "0.5rem",
+              "gutter-tablet": "1.25rem",
+              "space-xl": "2.25rem",
+              "space-md": "1rem",
+              margin: "1rem",
+              gutter: "1rem",
+              "space-xs": "0.25rem",
+              "space-lg": "1.5rem",
+              "margin-tablet": "1.5rem",
+              "margin-desktop": "2.5rem",
+              "gutter-desktop": "1.5rem",
+            },
+            fontFamily: {
+              "headline-md": ["Newsreader"],
+              "headline-lg-mobile": ["Newsreader"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Newsreader"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-xl": ["Newsreader"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "title-sm": ["Plus Jakarta Sans"],
+              "headline-lg": ["Newsreader"],
+              "label-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }],
+              "headline-lg-mobile": [
+                "22px",
+                { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "headline-xl-mobile": [
+                "28px",
+                { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "headline-xl": [
+                "36px",
+                { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-sm": [
+                "11px",
+                { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700" },
+              ],
+              "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }],
+              "headline-lg": [
+                "26px",
+                { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" },
+              ],
+              "label-md": [
+                "13px",
+                { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      <div class="h-20 max-w-7xl mx-auto px-margin-desktop flex items-center justify-between gap-gutter-desktop">
+        <div class="flex items-center gap-space-lg shrink-0">
+          <a class="flex items-center gap-space-sm group" href="index.html">
+            <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-surface-bright text-[20px]">menu_book</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none">CourseHub</span>
+              <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-space-xs">Curated YouTube Academy</span>
+            </div>
+          </a>
+        </div>
+        <div class="flex-1 max-w-xl mx-auto hidden md:block">
+          <div class="relative flex items-center w-full">
+            <span class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]">search</span>
+            <input
+              id="search-input"
+              class="w-full h-11 pl-11 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all"
+              placeholder="Search free courses, topics, creators, or syllabus..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-lg shrink-0">
+          <nav class="hidden lg:flex items-center gap-space-xs">
+            <a class="px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-title-sm text-title-sm" href="index.html">Browse Courses</a>
+            <a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="submit.html">Submit a Course</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full pt-20 bg-background">
+      <div class="flex flex-col w-full">
+        <div class="max-w-7xl mx-auto w-full px-margin-desktop py-space-xl">
+          <!-- Top Catalog Control Bar -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+            <div>
+              <div class="flex items-center gap-space-xs text-secondary font-label-sm uppercase tracking-widest mb-space-xs">
+                <span class="material-symbols-outlined text-[16px]">school</span>
+                <span>Curated Syllabus Directory</span>
+              </div>
+              <div class="flex items-baseline gap-space-md">
+                <h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Structured Courses</h1>
+                <span class="font-body-md text-body-md text-on-surface-variant font-medium">(<span id="course-count-heading">0</span> tracks)</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm self-start md:self-auto">
+              <div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-full">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort by:</span>
+                <select id="sort-select" class="bg-transparent font-title-sm text-title-sm text-primary font-semibold focus:outline-none cursor-pointer pr-1">
+                  <option value="featured">Featured order</option>
+                  <option value="title">Title A–Z</option>
+                  <option value="videos">Most videos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Your Learning — progress summary (from localStorage) -->
+          <div id="learning-stats" class="mb-space-lg rounded-2xl bg-surface-container-lowest p-space-lg shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)]" hidden>
+            <div class="flex items-center justify-between gap-space-md flex-wrap mb-space-md">
+              <div class="flex items-center gap-space-sm min-w-0">
+                <div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">task_alt</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <h2 class="font-headline-md text-headline-md text-primary leading-tight">Your Learning</h2>
+                  <span id="learning-subline" class="font-body-sm text-body-sm text-on-surface-variant truncate"></span>
+                </div>
+              </div>
+              <button id="reset-all-progress-btn" class="flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors cursor-pointer shrink-0" type="button">
+                <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+                Reset all progress
+              </button>
+            </div>
+
+            <!-- Overall completion bar -->
+            <div class="flex items-center gap-space-md mb-space-md">
+              <div class="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+                <div id="learning-bar" class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <span id="learning-percent" class="font-title-sm text-title-sm text-primary font-bold shrink-0">0%</span>
+            </div>
+
+            <!-- Stat tiles -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-sm">
+              <div class="p-space-md rounded-xl bg-secondary-container flex items-center gap-3">
+                <span class="material-symbols-outlined text-[20px] text-on-secondary-container shrink-0">workspace_premium</span>
+                <div class="flex flex-col min-w-0">
+                  <span id="stat-courses-completed" class="font-headline-md text-headline-md text-on-secondary-container leading-none">0</span>
+                  <span class="font-label-sm text-label-sm uppercase text-on-secondary-container/80 mt-1">Courses completed</span>
+                </div>
+              </div>
+              <div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-[20px] text-secondary shrink-0">hourglass_top</span>
+                <div class="flex flex-col min-w-0">
+                  <span id="stat-courses-ongoing" class="font-headline-md text-headline-md text-primary leading-none">0</span>
+                  <span class="font-label-sm text-label-sm uppercase text-outline mt-1">Courses ongoing</span>
+                </div>
+              </div>
+              <div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-[20px] text-secondary shrink-0">check_circle</span>
+                <div class="flex flex-col min-w-0">
+                  <span id="stat-videos-watched" class="font-headline-md text-headline-md text-primary leading-none">0</span>
+                  <span class="font-label-sm text-label-sm uppercase text-outline mt-1">Videos completed</span>
+                </div>
+              </div>
+              <div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-[20px] text-secondary shrink-0">playlist_play</span>
+                <div class="flex flex-col min-w-0">
+                  <span id="stat-videos-remaining" class="font-headline-md text-headline-md text-primary leading-none">0</span>
+                  <span class="font-label-sm text-label-sm uppercase text-outline mt-1">Videos remaining</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content Layout Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+            <!-- Left Filter Sidebar -->
+            <aside class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm lg:sticky lg:top-24">
+              <button id="filters-toggle" type="button" class="lg:hidden w-full mb-space-md flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container text-primary font-title-sm text-title-sm">
+                <span>Filters</span>
+                <span class="material-symbols-outlined text-[18px]">tune</span>
+              </button>
+              <div id="filters-body">
+                <div class="flex items-center justify-between pb-space-md">
+                  <div class="flex items-center gap-space-xs text-primary">
+                    <span class="material-symbols-outlined text-[20px] text-secondary">tune</span>
+                    <span class="font-headline-md text-headline-md text-primary font-bold">Filters</span>
+                  </div>
+                  <button class="font-label-md text-label-md text-secondary hover:underline cursor-pointer" id="clear-all-btn" type="button">
+                    Clear all
+                  </button>
+                </div>
+                <div class="flex flex-col gap-space-lg pt-space-xs" id="facet-list">
+                  <!-- facet groups injected by app.js -->
+                </div>
+
+                <!-- Academic Guarantee Box -->
+                <div class="bg-surface-container rounded-lg p-space-md mt-space-lg">
+                  <div class="flex items-center gap-space-xs text-secondary font-title-sm text-title-sm mb-1">
+                    <span class="material-symbols-outlined text-[18px]">verified</span>
+                    <span>Distraction Free</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Every playlist is vetted for pedagogical rigor and coherent sequential progression.
+                  </p>
+                </div>
+                <!-- Ad slot -->
+                <div class="mt-space-md rounded-lg border border-dashed border-outline-variant bg-surface-container-low p-space-md text-center">
+                  <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Advertisement</span>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Main Course Cards Catalog -->
+            <section class="lg:col-span-9 flex flex-col gap-space-lg">
+              <!-- Active Filter Badges Bar -->
+              <div class="flex flex-wrap items-center gap-space-xs bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+                <span class="font-label-sm text-label-sm text-outline uppercase px-space-xs shrink-0">Filters:</span>
+                <div id="active-filters" class="flex flex-wrap items-center gap-space-xs"></div>
+                <div class="ml-auto font-body-sm text-body-sm text-on-surface-variant pr-space-xs shrink-0" id="results-count"></div>
+              </div>
+
+              <!-- Course Grid -->
+              <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter-desktop">
+                <div class="col-span-full text-center py-space-xl text-on-surface-variant font-body-md text-body-md">Loading courses…</div>
+              </div>
+
+              <!-- Feature Spotlight CTA -->
+              <div class="bg-surface-container rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm">
+                <div class="flex flex-col gap-space-xs max-w-lg">
+                  <span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Expand the Library</span>
+                  <h4 class="font-headline-md text-headline-md text-primary">Found an exceptional YouTube course or series?</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Suggest it below. Submissions are reviewed by hand before being added to <code class="font-mono text-body-sm">data/courses.csv</code>.
+                  </p>
+                </div>
+                <a href="submit.html" class="flex items-center gap-2 px-space-lg py-3 rounded-xl bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-all active:scale-[0.98] shadow-md shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                  <span>Submit a course</span>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full bg-surface-container-low mt-space-xl">
+      <div class="max-w-7xl mx-auto px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex flex-col gap-space-xs text-center md:text-left">
+          <span class="font-headline-md text-headline-md text-primary">CourseHub</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">Organizing YouTube video lectures into structured, distraction-free curricula.</span>
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Course Catalog</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1065 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#545f73",
+              "primary-fixed-dim": "#bcc7de",
+              "on-tertiary-fixed-variant": "#930100",
+              "on-background": "#1b1c1a",
+              "tertiary-fixed-dim": "#ffb4a8",
+              "on-primary-fixed-variant": "#3c475a",
+              "primary-container": "#1e293b",
+              outline: "#75777d",
+              tertiary: "#330000",
+              surface: "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae8e5",
+              "on-primary-fixed": "#111c2d",
+              "outline-variant": "#c5c6cd",
+              "inverse-surface": "#30312f",
+              "primary-fixed": "#d8e3fb",
+              primary: "#091426",
+              "on-secondary-fixed": "#002114",
+              "on-error": "#ffffff",
+              "surface-bright": "#fbf9f6",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#ff523e",
+              "surface-dim": "#dbdad7",
+              "secondary-fixed": "#b1f0ce",
+              error: "#ba1a1a",
+              secondary: "#2c694e",
+              background: "#fbf9f6",
+              "tertiary-container": "#5a0000",
+              "on-secondary-fixed-variant": "#0e5138",
+              "inverse-primary": "#bcc7de",
+              "secondary-fixed-dim": "#95d4b3",
+              "inverse-on-surface": "#f2f0ed",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-surface": "#1b1c1a",
+              "on-secondary-container": "#316e52",
+              "on-surface-variant": "#45474c",
+              "surface-container": "#efeeeb",
+              "secondary-container": "#aeeecb",
+              "surface-container-highest": "#e4e2df",
+              "on-tertiary-fixed": "#410000",
+              "on-primary-container": "#8590a6",
+              "tertiary-fixed": "#ffdad4",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-sm": "0.5rem",
+              "gutter-tablet": "1.25rem",
+              "space-xl": "2.25rem",
+              "space-md": "1rem",
+              margin: "1rem",
+              gutter: "1rem",
+              "space-xs": "0.25rem",
+              "space-lg": "1.5rem",
+              "margin-tablet": "1.5rem",
+              "margin-desktop": "2.5rem",
+              "gutter-desktop": "1.5rem",
+            },
+            fontFamily: {
+              "headline-md": ["Newsreader"],
+              "headline-lg-mobile": ["Newsreader"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Newsreader"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-xl": ["Newsreader"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "title-sm": ["Plus Jakarta Sans"],
+              "headline-lg": ["Newsreader"],
+              "label-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-md": [
+                "20px",
+                { lineHeight: "26px", fontWeight: "600" },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "headline-xl-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "headline-xl": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }],
+              "headline-lg": [
+                "26px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-md": [
+                "13px",
+                {
+                  lineHeight: "18px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-margin-desktop flex items-center justify-between gap-gutter-desktop"
+      >
+        <div class="flex items-center gap-space-lg shrink-0">
+          <a
+            class="flex items-center gap-space-sm group"
+            data-path="browse-courses"
+            href="#"
+            ><div
+              class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-surface-bright text-[20px]"
+                >menu_book</span
+              >
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none"
+                >CourseHub</span
+              ><span
+                class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-space-xs"
+                >Curated YouTube Academy</span
+              >
+            </div></a
+          >
+        </div>
+        <div class="flex-1 max-w-xl mx-auto hidden md:block">
+          <div class="relative flex items-center w-full">
+            <span
+              class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]"
+              >search</span
+            ><input
+              class="w-full h-11 pl-11 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all"
+              placeholder="Search free courses, topics, creators, or syllabus..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-lg shrink-0">
+          <nav
+            class="hidden lg:flex items-center gap-space-xs"
+            data-active-classes="bg-primary-container text-on-primary font-title-sm text-title-sm"
+          >
+            <a
+              class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+              data-path="browse-courses"
+              href="#"
+              >Browse Courses</a
+            ><a
+              class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+              data-path="my-learning"
+              href="#"
+              >My Learning</a
+            ><a
+              class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+              data-path="saved-courses"
+              href="#"
+              >Saved</a
+            >
+          </nav>
+          <div class="h-6 w-[1px] bg-outline-variant/50 hidden lg:block"></div>
+          <div class="flex items-center gap-space-sm">
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-background">
+      <div class="flex flex-col w-full">
+        <!-- Top Breadcrumb & Metadata Action Bar -->
+        <div class="w-full max-w-7xl mx-auto px-margin-desktop py-space-md">
+          <div class="flex items-center justify-between gap-space-md flex-wrap">
+            <div
+              class="flex items-center gap-space-sm font-body-md text-body-md text-on-surface-variant"
+            >
+              <a
+                class="flex items-center gap-1 text-primary hover:text-secondary transition-colors font-title-sm text-title-sm group"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-[18px] transition-transform group-hover:-translate-x-0.5"
+                  >arrow_back</span
+                >
+                <span>All courses</span>
+              </a>
+              <span class="text-outline-variant">/</span>
+              <span
+                class="font-headline-md text-headline-md text-primary tracking-tight"
+                >Python for Beginners</span
+              >
+              <span
+                class="inline-flex items-center gap-1 ml-space-xs px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wide"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+                ></span>
+                In Progress
+              </span>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <button
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all shadow-sm"
+                id="bookmarkBtn"
+              >
+                <span class="material-symbols-outlined text-[18px]" id="bmIcon"
+                  >bookmark_border</span
+                >
+                <span id="bmText">Save Course</span>
+              </button>
+              <button
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all shadow-sm"
+              >
+                <span class="material-symbols-outlined text-[18px]">share</span>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Primary Content Grid: Theater Stage + Curriculum Sidebar -->
+        <div class="w-full max-w-7xl mx-auto px-margin-desktop pb-space-xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"
+          >
+            <!-- LEFT COLUMN: Main Stage (~68% width on 12-col grid -> col-span-8) -->
+            <section class="lg:col-span-8 flex flex-col gap-space-lg">
+              <!-- Video Theater Container -->
+              <div
+                class="relative w-full rounded-2xl overflow-hidden bg-primary shadow-2xl group select-none"
+              >
+                <!-- 16:9 Video Canvas Mockup -->
+                <div
+                  class="relative w-full aspect-video flex items-center justify-center overflow-hidden bg-gradient-to-tr from-primary via-primary-container to-primary"
+                >
+                  <!-- Ambient backdrop imagery -->
+                  <div
+                    class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity transform group-hover:scale-105 transition-transform duration-700"
+                    data-alt="A clean modern code editor interface showing elegant Python syntax with soft glow ambient warm study room lighting in the background, sharp cinematic depth of field, high educational quality."
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBFi4B42wQkAc94MwWpW7wt7atvDlZXsgB-P0FU77852LmJIBynqWZ0I5Ns6SJgbQaTCbPaQdFURiOg_UOpXT5leAfVf0t98v_2UkW4kxKq2f6ONkUpFJHMDaZMzBb286bGfMLykFPDj0upw85XDA0yZp6n4kGMcePNeBZEQ3oJqS0qOeFvh7cf0KdjNboCxZxJ_RQgEGfOrQvA2TP3LAJ0zG8cSlCfkl9iI4NKXQZf&quot;);
+                    "
+                  ></div>
+                  <!-- YouTube Branded Accent Central Play Trigger -->
+                  <button
+                    class="relative z-10 w-20 h-14 rounded-2xl bg-tertiary-container/90 hover:bg-error flex items-center justify-center text-on-tertiary shadow-xl hover:scale-110 active:scale-95 transition-all duration-200"
+                    id="mainPlayToggle"
+                  >
+                    <svg class="w-8 h-8 fill-current ml-1" viewbox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                  </button>
+                  <!-- Video Header Badge Overlay -->
+                  <div
+                    class="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1 rounded-full bg-primary/80 backdrop-blur-md text-surface font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="w-2 h-2 rounded-full bg-error animate-ping"
+                    ></span>
+                    <span>HD 1080p • YouTube Embed</span>
+                  </div>
+                  <!-- YouTube Watermark Direct Link -->
+                  <a
+                    class="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-primary font-label-sm text-label-sm transition-transform hover:scale-105 shadow-md"
+                    href="https://youtube.com"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="text-error font-bold">▶</span>
+                    <span class="font-semibold">Watch on YouTube</span>
+                  </a>
+                  <!-- Video Player Controls Bar -->
+                  <div
+                    class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-primary via-primary/80 to-transparent p-4 flex flex-col gap-2"
+                  >
+                    <!-- Scrubber Bar -->
+                    <div
+                      class="relative w-full h-1.5 bg-surface-container-highest/30 rounded-full cursor-pointer overflow-hidden group/bar"
+                    >
+                      <div
+                        class="absolute top-0 left-0 bottom-0 w-[34%] bg-error rounded-full relative"
+                      >
+                        <div
+                          class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-surface shadow-md opacity-0 group-hover/bar:opacity-100 transition-opacity"
+                        ></div>
+                      </div>
+                      <div
+                        class="absolute top-0 left-0 bottom-0 w-[58%] bg-surface-container-lowest/20 rounded-full pointer-events-none"
+                      ></div>
+                    </div>
+                    <!-- Media Player Metadata & Buttons -->
+                    <div
+                      class="flex items-center justify-between text-surface font-body-sm text-body-sm pt-1"
+                    >
+                      <div class="flex items-center gap-4">
+                        <button
+                          class="hover:text-secondary-fixed transition-colors flex items-center"
+                        >
+                          <span class="material-symbols-outlined text-[22px]"
+                            >play_arrow</span
+                          >
+                        </button>
+                        <button
+                          class="hover:text-secondary-fixed transition-colors flex items-center"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >volume_up</span
+                          >
+                        </button>
+                        <span
+                          class="font-mono text-[12px] text-surface-dim tracking-wider"
+                          >04:12 / 12:48</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-3 text-surface-dim">
+                        <button
+                          class="hover:text-surface transition-colors flex items-center gap-1 px-2 py-0.5 rounded bg-surface/10 font-label-sm text-label-sm"
+                        >
+                          1.0x
+                        </button>
+                        <button
+                          class="hover:text-surface transition-colors flex items-center"
+                        >
+                          <span class="material-symbols-outlined text-[19px]"
+                            >closed_caption</span
+                          >
+                        </button>
+                        <button
+                          class="hover:text-surface transition-colors flex items-center"
+                        >
+                          <span class="material-symbols-outlined text-[19px]"
+                            >settings</span
+                          >
+                        </button>
+                        <button
+                          class="hover:text-surface transition-colors flex items-center"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >fullscreen</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Video Metadata Strip -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)]"
+              >
+                <div class="flex flex-col">
+                  <div
+                    class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider"
+                  >
+                    <span>Video 1 of 4</span>
+                    <span>•</span>
+                    <span class="text-secondary font-semibold"
+                      >Part 1: Setup &amp; Foundations</span
+                    >
+                    <span>•</span>
+                    <span class="font-mono text-outline">ID: rfscVS0vtbw</span>
+                  </div>
+                  <h1
+                    class="font-headline-xl text-headline-xl text-primary mt-1 tracking-tight"
+                  >
+                    Beginner
+                  </h1>
+                </div>
+                <div
+                  class="flex items-center gap-space-sm self-start md:self-center"
+                >
+                  <a
+                    class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-all active:scale-[0.98] shadow-md"
+                    href="https://youtu.be/rfscVS0vtbw"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span class="text-error font-black text-[18px]">▶</span>
+                    <span>Watch on YouTube</span>
+                  </a>
+                  <button
+                    class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-colors"
+                    title="Download Transcript"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >description</span
+                    >
+                  </button>
+                  <button
+                    class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-colors"
+                    title="Toggle Theater Mode"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >aspect_ratio</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Course Curriculum Details & Description Section -->
+              <div
+                class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] flex flex-col gap-space-md"
+              >
+                <div
+                  class="flex items-start justify-between flex-wrap gap-space-sm pb-space-sm"
+                >
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold"
+                      >Course Overview</span
+                    >
+                    <h2
+                      class="font-headline-lg text-headline-lg text-primary mt-0.5"
+                    >
+                      Python for Beginners
+                    </h2>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface"
+                  >
+                    <div
+                      class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold text-[11px]"
+                    >
+                      CH
+                    </div>
+                    <span
+                      class="font-label-md text-label-md text-on-surface-variant"
+                      >Curated by
+                      <span class="text-primary font-semibold"
+                        >CourseHub Editorial</span
+                      ></span
+                    >
+                  </div>
+                </div>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  Learn Python programming from scratch. Covers variables and
+                  basic data structures with hands-on examples, control flow,
+                  functions, and object paradigms designed for complete
+                  beginners without prior computer science background.
+                </p>
+                <!-- Curriculum Concept Tag Pills -->
+                <div class="flex items-center gap-2 flex-wrap pt-2">
+                  <span
+                    class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md"
+                  >
+                    functions
+                  </span>
+                  <span
+                    class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md"
+                  >
+                    loops
+                  </span>
+                  <span
+                    class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md"
+                  >
+                    Programming
+                  </span>
+                  <span
+                    class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md"
+                  >
+                    syntax
+                  </span>
+                  <span
+                    class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md"
+                  >
+                    data structures
+                  </span>
+                  <span
+                    class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md"
+                  >
+                    beginner-friendly
+                  </span>
+                </div>
+                <!-- Academic Micro-Stats & Syllabus Roadmap Graphic -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-sm"
+                >
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >timer</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm uppercase text-outline"
+                        >Total Runtime</span
+                      >
+                      <span
+                        class="font-title-sm text-title-sm text-primary font-bold"
+                        >1h 18m</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >school</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm uppercase text-outline"
+                        >Skill Level</span
+                      >
+                      <span
+                        class="font-title-sm text-title-sm text-primary font-bold"
+                        >Zero Prerequisites</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >verified</span
+                      >
+                    </div>
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm uppercase text-outline"
+                        >Course Format</span
+                      >
+                      <span
+                        class="font-title-sm text-title-sm text-primary font-bold"
+                        >Distraction-Free</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Lesson Completion & Streak Progression Banner -->
+              <div
+                class="p-space-md rounded-xl bg-secondary-container text-on-secondary-container flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-sm"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-[22px]"
+                      >local_fire_department</span
+                    >
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-title-sm text-title-sm text-primary font-semibold"
+                      >Completed Part 1?</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-secondary-fixed-variant"
+                      >Mark this lecture as finished to update your daily study
+                      streak and unlock Part 2 notes.</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="shrink-0 px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm transition-all shadow-sm active:scale-95 flex items-center gap-1.5"
+                  id="completeBtn"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check_circle</span
+                  >
+                  <span>Mark Complete &amp; Next</span>
+                </button>
+              </div>
+            </section>
+            <!-- RIGHT COLUMN: Sticky Course Videos Playlist (~32% width -> col-span-4) -->
+            <aside
+              class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-24"
+            >
+              <!-- Playlist Card -->
+              <div
+                class="rounded-2xl bg-surface-container-lowest shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] overflow-hidden"
+              >
+                <!-- Playlist Header -->
+                <div
+                  class="p-space-md bg-surface-container flex items-center justify-between"
+                >
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-primary text-[20px]"
+                      >queue_music</span
+                    >
+                    <h3
+                      class="font-title-sm text-title-sm text-primary font-bold"
+                    >
+                      Course videos
+                    </h3>
+                  </div>
+                  <span
+                    class="font-label-md text-label-md text-on-surface-variant bg-surface-container-lowest px-2.5 py-0.5 rounded-full shadow-xs"
+                  >
+                    4 videos • 1 hr 18 m
+                  </span>
+                </div>
+                <!-- Progress Micro-bar -->
+                <div class="w-full bg-surface-container-high h-1.5">
+                  <div
+                    class="bg-secondary h-1.5 rounded-full transition-all duration-500"
+                    style="width: 25%"
+                  ></div>
+                </div>
+                <!-- Vertical Video Syllabus Item List -->
+                <div class="flex flex-col divide-y-0" id="playlistContainer">
+                  <!-- Item 1: Active Playing State -->
+                  <a
+                    class="playlist-item group relative flex items-start gap-3 p-3.5 bg-secondary-container/40 transition-colors cursor-pointer"
+                    href="#video-1"
+                  >
+                    <!-- Active Left Highlight Indicator Pill -->
+                    <div
+                      class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary rounded-r"
+                    ></div>
+                    <div
+                      class="w-6 h-6 rounded-md bg-secondary text-on-secondary font-mono text-[12px] font-bold flex items-center justify-center shrink-0 mt-0.5"
+                    >
+                      1
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between gap-1">
+                        <span
+                          class="font-title-sm text-title-sm text-primary font-bold truncate"
+                          >Beginner</span
+                        >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-secondary font-semibold shrink-0"
+                          >12:48</span
+                        >
+                      </div>
+                      <div class="flex items-center gap-2 mt-0.5">
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-on-surface-variant truncate"
+                          >rfscVS0vtbw</span
+                        >
+                        <span
+                          class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold"
+                        >
+                          <span
+                            class="material-symbols-outlined text-[14px] animate-pulse"
+                            >volume_up</span
+                          >
+                          Playing
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- Item 2: Up Next -->
+                  <a
+                    class="playlist-item group relative flex items-start gap-3 p-3.5 hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-container-lowest"
+                    href="#video-2"
+                  >
+                    <div
+                      class="w-6 h-6 rounded-md bg-surface-container-high text-on-surface-variant font-mono text-[12px] font-medium flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      2
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between gap-1">
+                        <span
+                          class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-medium truncate"
+                          >Beginner</span
+                        >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline shrink-0"
+                          >14:20</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between gap-1 mt-0.5"
+                      >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline truncate"
+                          >kqtd5dpn9C8</span
+                        >
+                        <span
+                          class="text-outline-variant group-hover:text-secondary flex items-center transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[18px]"
+                            >play_circle</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- Item 3 -->
+                  <a
+                    class="playlist-item group relative flex items-start gap-3 p-3.5 hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-container-lowest"
+                    href="#video-3"
+                  >
+                    <div
+                      class="w-6 h-6 rounded-md bg-surface-container-high text-on-surface-variant font-mono text-[12px] font-medium flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      3
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between gap-1">
+                        <span
+                          class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-medium truncate"
+                          >Beginner</span
+                        >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline shrink-0"
+                          >22:45</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between gap-1 mt-0.5"
+                      >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline truncate"
+                          >t8pPdKYpowI</span
+                        >
+                        <span
+                          class="text-outline-variant group-hover:text-secondary flex items-center transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[18px]"
+                            >play_circle</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- Item 4 -->
+                  <a
+                    class="playlist-item group relative flex items-start gap-3 p-3.5 hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-container-lowest"
+                    href="#video-4"
+                  >
+                    <div
+                      class="w-6 h-6 rounded-md bg-surface-container-high text-on-surface-variant font-mono text-[12px] font-medium flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      4
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between gap-1">
+                        <span
+                          class="font-title-sm text-title-sm text-on-surface group-hover:text-primary font-medium truncate"
+                          >Beginner</span
+                        >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline shrink-0"
+                          >18:10</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between gap-1 mt-0.5"
+                      >
+                        <span
+                          class="font-mono text-body-sm text-body-sm text-outline truncate"
+                          >9Os0av4YEbY</span
+                        >
+                        <span
+                          class="text-outline-variant group-hover:text-secondary flex items-center transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[18px]"
+                            >play_circle</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- Playlist Footer Status -->
+                <div
+                  class="p-3 bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm text-outline"
+                >
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]"
+                      >auto_stories</span
+                    >
+                    Self-paced playlist
+                  </span>
+                  <button
+                    class="hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >shuffle</span
+                    >
+                    Shuffle
+                  </button>
+                </div>
+              </div>
+              <!-- Integrated Academic Utility Panel (Replacing the raw Ad space placeholder with High-Value Interactive Sandbox) -->
+              <div
+                class="rounded-2xl p-space-md bg-surface-container-low shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] flex flex-col gap-space-sm relative overflow-hidden"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold"
+                    >Interactive Sandbox</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm font-mono"
+                    >Py 3.11</span
+                  >
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h4 class="font-headline-md text-headline-md text-primary">
+                    Live Code Playground
+                  </h4>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-normal"
+                  >
+                    Run your Python snippets directly in the browser alongside
+                    the lecture without installing anything locally.
+                  </p>
+                </div>
+                <!-- Interactive Code Snippet Mockup Preview -->
+                <div
+                  class="w-full rounded-lg bg-primary p-3 font-mono text-[12px] text-surface-bright flex flex-col gap-1 shadow-inner"
+                >
+                  <div class="text-outline flex items-center justify-between">
+                    <span># Exercise 1.1</span>
+                    <span class="text-[10px] text-secondary-fixed"
+                      >● active</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-secondary-fixed">course</span> =
+                    <span class="text-tertiary-fixed"
+                      >"Python for Beginners"</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-secondary-fixed">print</span>(f<span
+                      class="text-tertiary-fixed"
+                      >"Ready to learn {course}!"</span
+                    >)
+                  </div>
+                </div>
+                <button
+                  class="w-full mt-1 py-2.5 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm transition-all shadow-sm flex items-center justify-center gap-2 active:scale-[0.98]"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >terminal</span
+                  >
+                  <span>Launch Code Sandbox</span>
+                </button>
+              </div>
+              <!-- Distraction-Free Study Tips -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] flex items-start gap-3"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5"
+                  >lightbulb</span
+                >
+                <div class="flex flex-col gap-0.5">
+                  <span class="font-title-sm text-title-sm text-primary"
+                    >Autodidact Note</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Pause and code along at 06:30 when variable assignment is
+                    demonstrated in terminal.</span
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          // Interactive Bookmark Button State
+          const bookmarkBtn = document.getElementById("bookmarkBtn");
+          const bmIcon = document.getElementById("bmIcon");
+          const bmText = document.getElementById("bmText");
+          let isBookmarked = false;
+
+          if (bookmarkBtn && bmIcon && bmText) {
+            bookmarkBtn.addEventListener("click", function () {
+              isBookmarked = !isBookmarked;
+              if (isBookmarked) {
+                bmIcon.textContent = "bookmark";
+                bmIcon.style.fontVariationSettings = "'FILL' 1";
+                bmText.textContent = "Saved in Library";
+                bookmarkBtn.classList.add(
+                  "text-secondary",
+                  "bg-secondary-container/30",
+                );
+              } else {
+                bmIcon.textContent = "bookmark_border";
+                bmIcon.style.fontVariationSettings = "'FILL' 0";
+                bmText.textContent = "Save Course";
+                bookmarkBtn.classList.remove(
+                  "text-secondary",
+                  "bg-secondary-container/30",
+                );
+              }
+            });
+          }
+
+          // Play/Pause Micro-interaction toggle
+          const mainPlayToggle = document.getElementById("mainPlayToggle");
+          let isPlaying = false;
+          if (mainPlayToggle) {
+            mainPlayToggle.addEventListener("click", function () {
+              isPlaying = !isPlaying;
+              if (isPlaying) {
+                mainPlayToggle.innerHTML =
+                  '<span class="material-symbols-outlined text-[36px]">pause</span>';
+              } else {
+                mainPlayToggle.innerHTML =
+                  '<svg class="w-8 h-8 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+              }
+            });
+          }
+
+          // Mark Complete Progress button
+          const completeBtn = document.getElementById("completeBtn");
+          if (completeBtn) {
+            completeBtn.addEventListener("click", function () {
+              completeBtn.classList.add("bg-secondary");
+              completeBtn.innerHTML =
+                '<span class="material-symbols-outlined text-[18px]">done_all</span><span>Lesson 1 Finished!</span>';
+            });
+          }
+        })();
+      </script>
+    </main>
+    <footer class="w-full bg-surface-container-low mt-space-xl">
+      <div
+        class="max-w-7xl mx-auto px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"
+      >
+        <div class="flex flex-col gap-space-xs text-center md:text-left">
+          <span class="font-headline-md text-headline-md text-primary"
+            >CourseHub</span
+          ><span class="font-body-sm text-body-sm text-on-surface-variant"
+            >Organizing high-yield educational video lectures into structured,
+            distraction-free curricula.</span
+          >
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="browse-courses"
+            href="#"
+            >Course Catalog</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="my-learning"
+            href="#"
+            >Study Room</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="saved-courses"
+            href="#"
+            >Saved Playlists</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

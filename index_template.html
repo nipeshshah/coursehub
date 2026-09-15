@@ -1,0 +1,1180 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#545f73",
+              "primary-fixed-dim": "#bcc7de",
+              "on-tertiary-fixed-variant": "#930100",
+              "on-background": "#1b1c1a",
+              "tertiary-fixed-dim": "#ffb4a8",
+              "on-primary-fixed-variant": "#3c475a",
+              "primary-container": "#1e293b",
+              outline: "#75777d",
+              tertiary: "#330000",
+              surface: "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae8e5",
+              "on-primary-fixed": "#111c2d",
+              "outline-variant": "#c5c6cd",
+              "inverse-surface": "#30312f",
+              "primary-fixed": "#d8e3fb",
+              primary: "#091426",
+              "on-secondary-fixed": "#002114",
+              "on-error": "#ffffff",
+              "surface-bright": "#fbf9f6",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#ff523e",
+              "surface-dim": "#dbdad7",
+              "secondary-fixed": "#b1f0ce",
+              error: "#ba1a1a",
+              secondary: "#2c694e",
+              background: "#fbf9f6",
+              "tertiary-container": "#5a0000",
+              "on-secondary-fixed-variant": "#0e5138",
+              "inverse-primary": "#bcc7de",
+              "secondary-fixed-dim": "#95d4b3",
+              "inverse-on-surface": "#f2f0ed",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-surface": "#1b1c1a",
+              "on-secondary-container": "#316e52",
+              "on-surface-variant": "#45474c",
+              "surface-container": "#efeeeb",
+              "secondary-container": "#aeeecb",
+              "surface-container-highest": "#e4e2df",
+              "on-tertiary-fixed": "#410000",
+              "on-primary-container": "#8590a6",
+              "tertiary-fixed": "#ffdad4",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-sm": "0.5rem",
+              "gutter-tablet": "1.25rem",
+              "space-xl": "2.25rem",
+              "space-md": "1rem",
+              margin: "1rem",
+              gutter: "1rem",
+              "space-xs": "0.25rem",
+              "space-lg": "1.5rem",
+              "margin-tablet": "1.5rem",
+              "margin-desktop": "2.5rem",
+              "gutter-desktop": "1.5rem",
+            },
+            fontFamily: {
+              "headline-md": ["Newsreader"],
+              "headline-lg-mobile": ["Newsreader"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-xl-mobile": ["Newsreader"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-xl": ["Newsreader"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "title-sm": ["Plus Jakarta Sans"],
+              "headline-lg": ["Newsreader"],
+              "label-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-md": [
+                "20px",
+                { lineHeight: "26px", fontWeight: "600" },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "headline-xl-mobile": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "headline-xl": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "title-sm": ["16px", { lineHeight: "22px", fontWeight: "600" }],
+              "headline-lg": [
+                "26px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-md": [
+                "13px",
+                {
+                  lineHeight: "18px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-margin-desktop flex items-center justify-between gap-gutter-desktop"
+      >
+        <div class="flex items-center gap-space-lg shrink-0">
+          <a
+            class="flex items-center gap-space-sm group"
+            data-path="browse-courses"
+            href="#"
+            ><div
+              class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-surface-bright text-[20px]"
+                >menu_book</span
+              >
+            </div>
+            <div class="flex flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" width="100%" height="100%">
+  <!-- Transparent background (no rect or fill) -->
+
+  <!-- Top hairline rule with centered diamond embellishment in dark slate/charcoal -->
+  <g opacity="0.85">
+    <line x1="36" y1="28" x2="216" y2="28" stroke="#334155" stroke-width="1.25"/>
+    <polygon points="240,22 246,28 240,34 234,28" fill="#1e293b"/>
+    <line x1="264" y1="28" x2="444" y2="28" stroke="#334155" stroke-width="1.25"/>
+  </g>
+
+  <!-- Main Brand Name Wordmark: CourseHub with dark slate for Course and bold crimson for Hub -->
+  <g transform="translate(240, 84)">
+    <text text-anchor="middle" font-family="'Newsreader', 'Georgia', 'Playfair Display', serif" font-weight="700" font-size="52" letter-spacing="-0.5">
+      <tspan fill="#0f172a">Course</tspan><tspan fill="#dc2626">Hub</tspan>
+    </text>
+  </g>
+
+  <!-- Subtitle Tagline: CURATED YOUTUBE ACADEMY in dark muted slate -->
+  <text x="240" y="118" 
+        text-anchor="middle" 
+        font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="12.5" 
+        font-weight="700" 
+        letter-spacing="5" 
+        fill="#334155">CURATED YOUTUBE ACADEMY</text>
+
+  <!-- Subtle bottom micro-text line in subtle charcoal slate -->
+  <text x="240" y="148" 
+        text-anchor="middle" 
+        font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace" 
+        font-size="9" 
+        font-weight="600" 
+        letter-spacing="3" 
+        fill="#64748b">VERIFIED SYLLABI · DISTRACTION FREE · ZERO ADS</text>
+</svg>
+              <span
+                class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none"
+                >CourseHub</span
+              ><span
+                class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-space-xs"
+                >Curated YouTube Academy</span
+              >
+            </div></a
+          >
+        </div>
+        <div class="flex-1 max-w-xl mx-auto hidden md:block">
+          <div class="relative flex items-center w-full">
+            <span
+              class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]"
+              >search</span
+            ><input
+              class="w-full h-11 pl-11 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md shadow-[0_1px_3px_rgba(30,41,59,0.04),0_4px_12px_rgba(226,222,212,0.3)] focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all"
+              placeholder="Search free courses, topics, creators, or syllabus..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-lg shrink-0">
+          <nav
+            class="hidden lg:flex items-center gap-space-xs"
+            data-active-classes="bg-primary-container text-on-primary font-title-sm text-title-sm"
+          >
+            <a
+              aria-current="page"
+              class="px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-title-sm text-title-sm"
+              data-path="browse-courses"
+              href="#"
+              >Browse Courses</a
+            ><a
+              class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+              data-path="my-learning"
+              href="#"
+              >My Learning</a
+            ><a
+              class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+              data-path="saved-courses"
+              href="#"
+              >Saved</a
+            >
+          </nav>
+          <div class="h-6 w-[1px] bg-outline-variant/50 hidden lg:block"></div>
+          <div class="flex items-center gap-space-sm">
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-background">
+      <div class="flex flex-col w-full">
+        <div class="max-w-7xl mx-auto w-full px-margin-desktop py-space-xl">
+          <!-- Top Catalog Control Bar -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg"
+          >
+            <div>
+              <div
+                class="flex items-center gap-space-xs text-secondary font-label-sm uppercase tracking-widest mb-space-xs"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >school</span
+                >
+                <span>Curated Syllabus Directory</span>
+              </div>
+              <div class="flex items-baseline gap-space-md">
+                <h1
+                  class="font-headline-xl text-headline-xl text-primary tracking-tight"
+                >
+                  Structured Courses
+                </h1>
+                <span
+                  class="font-body-md text-body-md text-on-surface-variant font-medium"
+                  >(4 comprehensive tracks)</span
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm self-start md:self-auto">
+              <div
+                class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-full"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Sort by:</span
+                >
+                <select
+                  class="bg-transparent font-title-sm text-title-sm text-primary font-semibold focus:outline-none cursor-pointer pr-1"
+                >
+                  <option>Highest Rated</option>
+                  <option>Most Recent</option>
+                  <option>Video Count</option>
+                </select>
+              </div>
+              <button
+                class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors"
+                id="view-mode-btn"
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >grid_view</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Main Content Layout Grid -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"
+          >
+            <!-- Left Filter Sidebar -->
+            <aside
+              class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"
+            >
+              <div class="flex items-center justify-between pb-space-md">
+                <div class="flex items-center gap-space-xs text-primary">
+                  <span
+                    class="material-symbols-outlined text-[20px] text-secondary"
+                    >tune</span
+                  >
+                  <span
+                    class="font-headline-md text-headline-md text-primary font-bold"
+                    >Filters</span
+                  >
+                </div>
+                <button
+                  class="font-label-md text-label-md text-secondary hover:underline cursor-pointer"
+                  id="clear-all-btn"
+                >
+                  Clear all
+                </button>
+              </div>
+              <div class="flex flex-col gap-space-lg pt-space-xs">
+                <!-- Filter Group: Category -->
+                <div class="flex flex-col">
+                  <button
+                    class="flex items-center justify-between py-space-xs group text-left cursor-pointer"
+                    onclick="toggleSection('category-filters', 'cat-icon')"
+                    type="button"
+                  >
+                    <span
+                      class="font-title-sm text-title-sm text-primary font-semibold"
+                      >Category</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px] transition-transform duration-200 rotate-180"
+                      id="cat-icon"
+                      >expand_more</span
+                    >
+                  </button>
+                  <div
+                    class="flex flex-col gap-space-xs pt-space-sm"
+                    id="category-filters"
+                  >
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >loops</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >with coding interview tips.</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >wireframing</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >AI</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                  </div>
+                </div>
+                <!-- Divider subtle line -->
+                <div class="h-[1px] bg-surface-container-high w-full"></div>
+                <!-- Filter Group: Level -->
+                <div class="flex flex-col">
+                  <button
+                    class="flex items-center justify-between py-space-xs group text-left cursor-pointer"
+                    onclick="toggleSection('level-filters', 'lvl-icon')"
+                    type="button"
+                  >
+                    <span
+                      class="font-title-sm text-title-sm text-primary font-semibold"
+                      >Level &amp; Channel</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px] transition-transform duration-200 rotate-180"
+                      id="lvl-icon"
+                      >expand_more</span
+                    >
+                  </button>
+                  <div
+                    class="flex flex-col gap-space-xs pt-space-sm"
+                    id="level-filters"
+                  >
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >Programming</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >CS Dojo</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >ux;design;wireframing</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >Beginning</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                  </div>
+                </div>
+                <!-- Divider subtle line -->
+                <div class="h-[1px] bg-surface-container-high w-full"></div>
+                <!-- Filter Group: Topics -->
+                <div class="flex flex-col">
+                  <button
+                    class="flex items-center justify-between py-space-xs group text-left cursor-pointer"
+                    onclick="toggleSection('topics-filters', 'top-icon')"
+                    type="button"
+                  >
+                    <span
+                      class="font-title-sm text-title-sm text-primary font-semibold"
+                      >Topics</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-outline text-[18px] transition-transform duration-200 rotate-180"
+                      id="top-icon"
+                      >expand_more</span
+                    >
+                  </button>
+                  <div
+                    class="flex flex-col gap-space-xs pt-space-sm"
+                    id="topics-filters"
+                  >
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >functions</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-center justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"
+                          >Computer Science</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-start justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-start gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary mt-1 cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-snug"
+                          >and usability testing for aspiring designers.</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline ml-2"
+                        >1</span
+                      >
+                    </label>
+                    <label
+                      class="flex items-start justify-between py-1 group cursor-pointer"
+                    >
+                      <div class="flex items-start gap-space-sm">
+                        <input
+                          class="w-4 h-4 rounded accent-secondary mt-1 cursor-pointer"
+                          type="checkbox"
+                        />
+                        <span
+                          class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-snug"
+                          >claude, ai, agentic loops, Peace Of Code,
+                          archiect</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-outline ml-2"
+                        >1</span
+                      >
+                    </label>
+                  </div>
+                </div>
+                <!-- Academic Guarantee Box -->
+                <div
+                  class="bg-surface-container rounded-lg p-space-md mt-space-md"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-secondary font-title-sm text-title-sm mb-1"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >verified</span
+                    >
+                    <span>Distraction Free</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Every playlist is vetted for pedagogical rigor, zero
+                    clickbait intros, and coherent sequential progression.
+                  </p>
+                </div>
+              </div>
+            </aside>
+            <!-- Main Course Cards Catalog -->
+            <section class="lg:col-span-9 flex flex-col gap-space-lg">
+              <!-- Active Filter Badges Bar -->
+              <div
+                class="flex flex-wrap items-center gap-space-xs bg-surface-container-lowest p-space-sm rounded-xl shadow-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-outline uppercase px-space-xs"
+                  >Active Tags:</span
+                >
+                <div
+                  class="inline-flex items-center gap-1 px-space-sm py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm"
+                >
+                  <span>Free YouTube Curricula</span>
+                  <button class="hover:text-primary cursor-pointer">
+                    <span class="material-symbols-outlined text-[14px]"
+                      >close</span
+                    >
+                  </button>
+                </div>
+                <div
+                  class="inline-flex items-center gap-1 px-space-sm py-1 bg-surface-container-high text-on-surface rounded-full text-label-sm font-label-sm"
+                >
+                  <span>Verified Sylabi</span>
+                  <button class="hover:text-primary cursor-pointer">
+                    <span class="material-symbols-outlined text-[14px]"
+                      >close</span
+                    >
+                  </button>
+                </div>
+                <div
+                  class="ml-auto font-body-sm text-body-sm text-on-surface-variant pr-space-xs hidden sm:block"
+                >
+                  Showing 4 results
+                </div>
+              </div>
+              <!-- 3-Column Desktop Course Grid -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter-desktop"
+              >
+                <!-- Card 1: Python for Beginners -->
+                <article
+                  class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group"
+                >
+                  <div
+                    class="relative aspect-video w-full bg-surface-container-highest overflow-hidden"
+                  >
+                    <img
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Editorial warm photograph of an organized wooden desk with a computer monitor showing clean Python syntax and algorithmic code structures, soft natural ambient morning light, warm parchment notes, and a ceramic tea mug"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh-70h0D_Y_A72aDEs0c6K_m-ErIoo7XKsdFlJ3RNGWWZ3hunJOrDECTeoWP7EBaYgHp33vP76a3NFGyL4wdFJdQqb7IKSGy_c42erHrR_Dzu7nDJz7mfLjf7zoibo1R3I7l99UJ5EGigLaSEtjiL1FB9S83c2C3GyBzqFU8w7cbk5eoP33RN03riPhtgLMlrY4Ixf-ica41WnHkO6ZgqMXdSQl1RejGcO9XWr_go5"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-space-sm right-space-sm bg-primary/85 text-surface-bright px-space-sm py-space-xs rounded-full font-label-sm text-label-sm backdrop-blur-sm flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >playlist_play</span
+                      >
+                      <span>4 videos</span>
+                    </div>
+                    <div class="absolute bottom-space-sm left-space-sm">
+                      <span
+                        class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-md bg-secondary text-surface-bright font-label-sm text-label-sm font-bold tracking-wide uppercase"
+                      >
+                        Beginner
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col flex-1 p-space-md justify-between">
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold"
+                        >Programming</span
+                      >
+                      <h3
+                        class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors leading-tight"
+                      >
+                        Python for Beginners
+                      </h3>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2"
+                      >
+                        Learn Python programming from scratch. Covers variables
+                        and basic data structures with hands-on examples.
+                      </p>
+                    </div>
+                    <div class="mt-space-lg flex flex-col gap-space-md">
+                      <!-- Tag cloud -->
+                      <div class="flex flex-wrap gap-space-xs items-center">
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >functions</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >loops</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >variables</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between pt-space-xs"
+                      >
+                        <div class="flex items-center gap-space-xs">
+                          <div
+                            class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-[10px]"
+                          >
+                            PY
+                          </div>
+                          <span
+                            class="font-body-sm text-body-sm text-outline font-medium"
+                            >CS Essentials</span
+                          >
+                        </div>
+                        <button
+                          class="px-space-md py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Start Course</span>
+                          <span class="material-symbols-outlined text-[16px]"
+                            >arrow_forward</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Card 2: Data Structures & Algorithms -->
+                <article
+                  class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group"
+                >
+                  <div
+                    class="relative aspect-video w-full bg-surface-container-highest overflow-hidden"
+                  >
+                    <img
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Technical academic visualization of binary search trees and graph algorithms rendered in subtle cream and sage green on a sleek dark chalkboard aesthetic, precise geometry, high contrast studio lighting"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEkKJM-Fyj_sqfIk8Zh3wmPxatGeSHmmMQrjRZhr7X9G1qHs33thnO4VQDBPWVqkzLPiZN4tY0BtwBWUbni1MIKahRTL5zqeT_jITC6MZtjrK-PfBrvBtx7c1oDr97Uk8qNi1FHV7yD4AAMdgapOW57GF9O_7Gffh7F8a2RzC0yBBSE4WcWFbEtHSSzL7rRQDSNv_XHoc0I1keXP18MxGPYsFCSPwtNs8NMWfey6RC"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-space-sm right-space-sm bg-primary/85 text-surface-bright px-space-sm py-space-xs rounded-full font-label-sm text-label-sm backdrop-blur-sm flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >playlist_play</span
+                      >
+                      <span>0 videos</span>
+                    </div>
+                    <div class="absolute bottom-space-sm left-space-sm">
+                      <span
+                        class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-md bg-surface-tint text-surface-bright font-label-sm text-label-sm font-bold tracking-wide uppercase"
+                      >
+                        Intermediate
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col flex-1 p-space-md justify-between">
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold"
+                        >CS Dojo</span
+                      >
+                      <h3
+                        class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors leading-tight"
+                      >
+                        Data Structures &amp; Algorithms
+                      </h3>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2"
+                      >
+                        A practical walkthrough of core data structures and
+                        algorithms every developer needs for interview prep.
+                      </p>
+                    </div>
+                    <div class="mt-space-lg flex flex-col gap-space-md">
+                      <!-- Tag cloud -->
+                      <div class="flex flex-wrap gap-space-xs items-center">
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold"
+                          >Computer Science</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >interview tips</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >dsa</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between pt-space-xs"
+                      >
+                        <div class="flex items-center gap-space-xs">
+                          <div
+                            class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-[10px]"
+                          >
+                            CD
+                          </div>
+                          <span
+                            class="font-body-sm text-body-sm text-outline font-medium"
+                            >CS Dojo Series</span
+                          >
+                        </div>
+                        <button
+                          class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-title-sm text-title-sm flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Explore Syllabus</span>
+                          <span class="material-symbols-outlined text-[16px]"
+                            >menu_book</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Card 3: UX Design Foundations -->
+                <article
+                  class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group"
+                >
+                  <div
+                    class="relative aspect-video w-full bg-surface-container-highest overflow-hidden"
+                  >
+                    <img
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Close up architectural capture of UX design wireframes sketched on fine dot-grid archival paper with a fountain pen, alongside a smartphone prototype with clean typography and sage accents, elegant soft desk shadow"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7y5wNkeguyZrLV3T6tMtUIctUvxzveKMGxOXKZtPAria4aMqbFgj10aFt6wMPcdPPfB3pZjH0X14XHFptcsrMvAPXblFh43R4sgGIrIh5vNc_SmCusqjnz-EAF3gPq7ruSZjOz_d9nH8H02gNHqCQP7tp4EFyV2FlOg5WqbkZ_zQDHXEJ4aPijUqq0A5nU_6V0GpJaTp_tHA0tuA_viCYB8Ah-Fud4FtUox0YvcyP"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-space-sm right-space-sm bg-primary/85 text-surface-bright px-space-sm py-space-xs rounded-full font-label-sm text-label-sm backdrop-blur-sm flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >playlist_play</span
+                      >
+                      <span>3 videos</span>
+                    </div>
+                    <div class="absolute bottom-space-sm left-space-sm">
+                      <span
+                        class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-md bg-secondary text-surface-bright font-label-sm text-label-sm font-bold tracking-wide uppercase"
+                      >
+                        Foundations
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col flex-1 p-space-md justify-between">
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold"
+                        >ux;design;wireframing</span
+                      >
+                      <h3
+                        class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors leading-tight"
+                      >
+                        UX Design Foundations
+                      </h3>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2"
+                      >
+                        An introduction to user experience design principles and
+                        usability testing for aspiring designers.
+                      </p>
+                    </div>
+                    <div class="mt-space-lg flex flex-col gap-space-md">
+                      <!-- Tag cloud -->
+                      <div class="flex flex-wrap gap-space-xs items-center">
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold"
+                          >usability testing</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >wireframing</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >Design</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between pt-space-xs"
+                      >
+                        <div class="flex items-center gap-space-xs">
+                          <div
+                            class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-[10px]"
+                          >
+                            UX
+                          </div>
+                          <span
+                            class="font-body-sm text-body-sm text-outline font-medium"
+                            >Design Studio</span
+                          >
+                        </div>
+                        <button
+                          class="px-space-md py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Start Course</span>
+                          <span class="material-symbols-outlined text-[16px]"
+                            >arrow_forward</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Card 4: Agentic Loop & Architecture -->
+                <article
+                  class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group"
+                >
+                  <div
+                    class="relative aspect-video w-full bg-surface-container-highest overflow-hidden"
+                  >
+                    <img
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Editorial cinematic photography of an AI systems architect pointing to an glowing technical interface with tool use, agent loops, stop_reason conditionals, and Claude Certified Architect badges, vibrant warm lighting in an executive research suite"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmf7w9BXtHmJ_dP4vvBK6wGQ2pZDDO916eOVz_LFy5yrgj9Ke8wt2NsHyPq3Apg-AkiOz848TZBcwL_C8Fcq9KZjf2mwQ2Ulp8V-JFvz_hdSuvyDSD1zDQQTjX-mE1sPuNna69rOJXBXS-ENQQkBvvxno2gdDmDAQBnRBVDtRq4qUsO6aQKHdWuvAcN4J3g0vbv6mUq9G-Z9fZXZifVWcalyGx7hWPSWTN5niwP5ea"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-space-sm right-space-sm bg-primary/85 text-surface-bright px-space-sm py-space-xs rounded-full font-label-sm text-label-sm backdrop-blur-sm flex items-center gap-1"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >videocam</span
+                      >
+                      <span>1 video (Full)</span>
+                    </div>
+                    <div class="absolute bottom-space-sm left-space-sm">
+                      <span
+                        class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-md bg-error text-on-error font-label-sm text-label-sm font-bold tracking-wide uppercase"
+                      >
+                        YouTube Deepdive
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col flex-1 p-space-md justify-between">
+                    <div>
+                      <span
+                        class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold"
+                        >Beginning • Peace Of Code</span
+                      >
+                      <h3
+                        class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors leading-tight"
+                      >
+                        Agentic Loop &amp; Architecture
+                      </h3>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2"
+                      >
+                        Claude certified architect lecture explaining agentic
+                        loop iterations, stop reasons, and deterministic tool
+                        calls in production.
+                      </p>
+                    </div>
+                    <div class="mt-space-lg flex flex-col gap-space-md">
+                      <!-- Tag cloud -->
+                      <div class="flex flex-wrap gap-space-xs items-center">
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >claude</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >ai agent</span
+                        >
+                        <span
+                          class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"
+                          >architecture</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between pt-space-xs"
+                      >
+                        <div class="flex items-center gap-space-xs">
+                          <div
+                            class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-[10px]"
+                          >
+                            PC
+                          </div>
+                          <span
+                            class="font-body-sm text-body-sm text-outline font-medium"
+                            >Peace Of Code</span
+                          >
+                        </div>
+                        <button
+                          class="px-space-md py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Watch Video</span>
+                          <span class="material-symbols-outlined text-[16px]"
+                            >play_arrow</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- Feature Spotlight / Add Course Bento Box -->
+                <div
+                  class="col-span-1 md:col-span-2 xl:col-span-2 bg-surface-container rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm"
+                >
+                  <div class="flex flex-col gap-space-xs max-w-lg">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider"
+                      >Expand the Library</span
+                    >
+                    <h4 class="font-headline-md text-headline-md text-primary">
+                      Found an exceptional YouTube course or series?
+                    </h4>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Submit any high-yield playlist URL. Our academic
+                      moderators organize timestamps into downloadable syllabi
+                      with zero distractions.
+                    </p>
+                  </div>
+                  <button
+                    class="shrink-0 px-space-lg py-3 bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm rounded-xl flex items-center gap-space-xs transition-colors cursor-pointer shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_link</span
+                    >
+                    <span>Submit Playlist URL</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <script>
+        function toggleSection(sectionId, iconId) {
+          const section = document.getElementById(sectionId);
+          const icon = document.getElementById(iconId);
+          if (!section || !icon) return;
+
+          if (section.classList.contains("hidden")) {
+            section.classList.remove("hidden");
+            icon.classList.add("rotate-180");
+          } else {
+            section.classList.add("hidden");
+            icon.classList.remove("rotate-180");
+          }
+        }
+
+        document
+          .getElementById("clear-all-btn")
+          ?.addEventListener("click", function () {
+            const checkboxes = document.querySelectorAll(
+              'aside input[type="checkbox"]',
+            );
+            checkboxes.forEach((cb) => (cb.checked = false));
+          });
+      </script>
+    </main>
+    <footer class="w-full bg-surface-container-low mt-space-xl">
+      <div
+        class="max-w-7xl mx-auto px-margin-desktop py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"
+      >
+        <div class="flex flex-col gap-space-xs text-center md:text-left">
+          <span class="font-headline-md text-headline-md text-primary"
+            >CourseHub</span
+          ><span class="font-body-sm text-body-sm text-on-surface-variant"
+            >Organizing high-yield educational video lectures into structured,
+            distraction-free curricula.</span
+          >
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="browse-courses"
+            href="#"
+            >Course Catalog</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="my-learning"
+            href="#"
+            >Study Room</a
+          ><a
+            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+            data-path="saved-courses"
+            href="#"
+            >Saved Playlists</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
